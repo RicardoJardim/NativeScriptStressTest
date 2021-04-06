@@ -4,12 +4,12 @@ of which NativeScript renders with a platform-specific iOS or Android native con
 You can find a full list of user interface components you can use in your app at
 https://docs.nativescript.org/ui/components.
 -->
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="navigatingTo">
     <!--
     The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
     http://docs.nativescript.org/ui/action-bar
     -->
-    <ActionBar title="My App" icon=""></ActionBar>
+    <ActionBar flat="true" title="" icon=""></ActionBar>
 
     <!--
     The StackLayout stacks UI components on the screen—either vertically or horizontally.
@@ -22,9 +22,29 @@ https://docs.nativescript.org/ui/components.
     The theme also provides a set of helper class names such as p-20, h1, h2, and text-center to enhance styling.
     You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
     -->
-    <StackLayout class="p-20">
+ 
+
+<DockLayout stretchLastChild="false" height='100%' >
+     <StackLayout dock="top"  class="p-20" height='91%' >
         <Label text="Tap the button" class="h1 text-center"/>
-        <Button text="TAP" tap="{{ onTap }}" class="-primary"/>
+<!--         <Image src="~/images/tablet1.png" stretch="aspectFill"/>
+ -->        <Button text="TAP" tap="{{ onTap }}" class="-primary"/>
         <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
     </StackLayout>
+  <FlexboxLayout dock="bottom" paddingTop="4" backgroundColor="#0099ff" alignItems="center" justifyContent="space-around" height='9%'>
+        <StackLayout class="active">
+            <Image class="bottomImage"  tintColor="white" src="~/images/creativity1.png" stretch="aspectFit" />
+            <label class ="bottomLabel" textAlignment="center" text="btn1"/>
+        </StackLayout>
+        <StackLayout >
+            <Image class="bottomImage" src="~/images/tablet1.png" stretch="aspectFit" />
+            <label class ="bottomLabel" textAlignment="center" text="btn2"/>
+        </StackLayout>
+        <StackLayout >
+            <Image class="bottomImage" src="~/images/modeling1.png" stretch="aspectFit" />
+            <label class ="bottomLabel" textAlignment="center" text="btn3"/>
+        </StackLayout>
+    </FlexboxLayout>
+</DockLayout>
+  
 </Page>
