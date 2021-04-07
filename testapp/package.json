@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/NativeScript/nativescript-app-templates",
   "dependencies": {
+    "@nativescript-community/ui-material-bottom-navigation": "^5.2.18",
+    "@nativescript/camera": "^5.0.8",
     "@nativescript/core": "8.0.0",
+    "@nativescript/geolocation": "^7.1.0",
+    "@nativescript/imagepicker": "^1.0.3",
     "@nativescript/theme": "~2.3.0"
   },
   "devDependencies": {

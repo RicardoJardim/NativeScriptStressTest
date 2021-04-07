@@ -13,22 +13,21 @@ The imported CSS rules must precede all other types of rules.
 @import "~@nativescript/theme/css/core.css";
 @import "~@nativescript/theme/css/default.css";
 
-/* Place any CSS rules you want to apply on both iOS and Android here.
-This is where the vast majority of your CSS code goes. */
-
-/*
-The following CSS rule changes the font size of all Buttons that have the
-'-primary' class modifier.
-*/
 Button.-primary {
   font-size: 18;
+  background-color: #0099ff;
 }
 
-.bottomImage {
-  height: 25;
-  width: 25;
-}
-
-.bottomLabel {
+.bottom-nav {
+  background-color: #0099ff;
+  color: black;
   font-size: 14;
+}
+
+.tabstripitem-active {
+  color: black;
+}
+
+.tabstripitem-active:active {
+  color: white;
 }
