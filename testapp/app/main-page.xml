@@ -66,8 +66,8 @@
                 <Button text="CAMERA" tap="openCamera" class="-primary"/>
                 <Button text="GALLERY" tap="gallery" class="-primary"/>
                 <Button text="GPS" tap="gps" class="-primary"/>
-                <Button text="CALENDAR" tap="{{ onTap }}" class="-primary"/>
-                <Button text="CONTACTS" tap="{{ onTap }}" class="-primary"/>
+                <Button text="CALENDAR" tap="calendar" class="-primary"/>
+                <Button text="CONTACTS" tap="getContacts" class="-primary"/>
             </StackLayout>
         </mdt:TabContentItem>
     </mdt:BottomNavigation>

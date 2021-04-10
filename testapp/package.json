@@ -25,7 +25,9 @@
     "@nativescript/core": "8.0.0",
     "@nativescript/geolocation": "^7.1.0",
     "@nativescript/imagepicker": "^1.0.3",
-    "@nativescript/theme": "~2.3.0"
+    "@nativescript/theme": "~2.3.0",
+    "nativescript-calendar": "^3.0.0",
+    "nativescript-contacts-lite": "^0.2.7"
   },
   "devDependencies": {
     "@nativescript/android": "8.0.0",

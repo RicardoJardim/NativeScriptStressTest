@@ -16,11 +16,13 @@ import {
 	File,
 } from "@nativescript/core";
 import * as geolocation from "@nativescript/geolocation";
+import * as enums from "@nativescript/core/core-types";
+enums.CoreTypes.Accuracy.high;
 import * as imagepicker from "@nativescript/imagepicker";
+import * as Calendar from "nativescript-calendar";
 import * as camera from "@nativescript/camera";
-
 import { MainPageModel } from "./main-view-model";
-
+var Contacts = require("nativescript-contacts-lite");
 const documents: Folder = <Folder>knownFolders.documents();
 const folder: Folder = <Folder>documents.getFolder("");
 
@@ -138,25 +140,54 @@ export function openCamera(): void {
 }
 
 export function gps(args: EventData): void {
-	//https://docs.nativescript.org/plugins/geolocation.html#usage
-	/* geolocation.isEnabled().then(
-		(value) => {
-			console.log(value);
-			if (value == false) {
-				geolocation.enableLocationRequest().then(
-					(value) => {
-						console.log(value);
-					},
-					(e) => {
-						console.log(e);
-					}
-				);
+	geolocation
+		.getCurrentLocation({
+			desiredAccuracy: enums.CoreTypes.Accuracy.any,
+			maximumAge: 5000,
+			timeout: 20000,
+		})
+		.then(
+			(value) => {
+				console.log(value);
+			},
+			(e) => {
+				console.log(e);
 			}
+		);
+}
+
+export function calendar(): void {
+	Calendar.listCalendars().then(
+		function (calendars) {
+			// a JSON array of Calendar objects is returned, each with an 'id' and 'name'
+			console.log(
+				"Found these Calendars on the device: " + JSON.stringify(calendars)
+			);
+		},
+		function (error) {
+			console.log("Error while listing Calendars: " + error);
+		}
+	);
+}
+
+export function getContacts(): void {
+	let desiredFields = ["display_name", "phone"];
+
+	console.log("Loading contacts...");
+	let timer = new Date().getTime();
+
+	Contacts.getContactsWorker(desiredFields).then(
+		(result) => {
+			console.log(
+				`Loading contacts completed in ${new Date().getTime() - timer} ms.`
+			);
+			console.log(`Found ${result.length} contacts.`);
+			console.dir(result);
 		},
 		(e) => {
-			console.log(e);
+			console.dir(e);
 		}
-	); */
+	);
 }
 
 export function checkChanged(args: EventData) {
