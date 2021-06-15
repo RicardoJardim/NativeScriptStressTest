@@ -14,8 +14,9 @@ The imported CSS rules must precede all other types of rules.
 @import "~@nativescript/theme/css/default.css";
 
 Button.-primary {
-  font-size: 18;
+  font-size: 18px;
   background-color: #0099ff;
+  border-radius: 20px;
 }
 
 .bottom-nav {
@@ -28,6 +29,9 @@ Button.-primary {
   color: black;
 }
 
-.tabstripitem-active:active {
+.tabstripitem-active:active > Label {
   color: white;
+}
+.tabstripitem-active:active > Image {
+  size: 40vh;
 }

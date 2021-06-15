@@ -26,10 +26,9 @@
   
 </Page>
  -->
- <Page  xmlns:mdt="@nativescript-community/ui-material-bottom-navigation" actionBarHidden="true" navigatingTo="navigatingTo">
+<Page  xmlns:mdt="@nativescript-community/ui-material-bottom-navigation" actionBarHidden="true" navigatingTo="navigatingTo">
 
     <mdt:BottomNavigation id="bottom" selectedIndex="0" selectedIndexChanged="checkChanged">
-        <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
         <mdt:TabStrip class="bottom-nav" >
             <mdt:TabStripItem id="0" class="tabstripitem-active" >
                 <Label text="btn1"></Label>
@@ -37,15 +36,14 @@
             </mdt:TabStripItem>
             <mdt:TabStripItem id="1" class="tabstripitem-active" >
                 <Label text="btn2"></Label>
-                <Image src="~/images/tablet1.png"></Image>
+                <Image src="~/images/tablet1.png" ></Image>
             </mdt:TabStripItem>
             <mdt:TabStripItem  id="2" class="tabstripitem-active" >
                 <Label text="btn3"></Label>
-                <Image src="~/images/modeling1.png"></Image>
+                <Image  src="~/images/modeling1.png"></Image>
             </mdt:TabStripItem>
         </mdt:TabStrip>
 
-        <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
         <mdt:TabContentItem backgroundColor="yellow">
             <StackLayout class="p-20" verticalAlignment="center" >
                 <Label  text="{{ message }}" class="h2 text-center" textWrap="true"/>
@@ -71,4 +69,5 @@
             </StackLayout>
         </mdt:TabContentItem>
     </mdt:BottomNavigation>
+    
 </Page>
