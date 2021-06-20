@@ -20,14 +20,20 @@
   },
   "homepage": "https://github.com/NativeScript/nativescript-app-templates",
   "dependencies": {
-    "@nativescript/core": "~7.1.0",
-    "@nativescript/theme": "~2.3.0"
+    "@nativescript-community/ui-material-bottom-navigation": "^5.2.18",
+    "@nativescript/camera": "^5.0.8",
+    "@nativescript/core": "8.0.0",
+    "@nativescript/geolocation": "^7.1.0",
+    "@nativescript/imagepicker": "^1.0.3",
+    "@nativescript/theme": "~2.3.0",
+    "nativescript-calendar": "^3.0.0",
+    "nativescript-contacts-lite": "^0.2.7"
   },
   "devDependencies": {
     "@nativescript/android": "8.0.0",
     "@nativescript/ios": "8.0.0",
     "@nativescript/types": "~7.0.0",
-    "@nativescript/webpack": "~4.0.0",
+    "@nativescript/webpack": "4.1.0",
     "typescript": "~3.9.0"
   },
   "private": "true",

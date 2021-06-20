@@ -29,9 +29,9 @@ Button.-primary {
   color: black;
 }
 
-.tabstripitem-active:active > Label {
+.tabstripitem-active:active {
   color: white;
 }
-.tabstripitem-active:active > Image {
-  size: 40vh;
+.tabstripitem-active:active > image {
+  background-color: white;
 }

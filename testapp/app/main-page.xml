@@ -1,46 +1,19 @@
-<!-- 
-<Page xmlns="http://schemas.nativescript.org/tns.xsd"  navigatingTo="navigatingTo">
 
-
-<DockLayout stretchLastChild="false" height='100%' >
-    <StackLayout dock="top"  class="p-20" height='91%' >
-        <Label text="Tap the button" class="h1 text-center"/>
-        <Button text="TAP" tap="{{ onTap }}" class="-primary"/>
-        <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
-    </StackLayout>
-    <FlexboxLayout dock="bottom" paddingTop="4" backgroundColor="#0099ff" alignItems="center" justifyContent="space-around" height='9%'>
-        <StackLayout id="0" tap="{{ onChangingTab }}" >
-            <Image class="bottomImage"  tintColor="white" src="~/images/creativity1.png" stretch="aspectFit" />
-            <label class ="bottomLabel" color="white" textAlignment="center" text="btn1"/>
-        </StackLayout>
-        <StackLayout id="1" tap="{{ onChangingTab }}" >
-            <Image class="bottomImage" src="~/images/tablet1.png" stretch="aspectFit" />
-            <label class ="bottomLabel" textAlignment="center" text="btn2"/>
-        </StackLayout>
-        <StackLayout id="2"  tap="{{ onChangingTab }}" >
-            <Image class="bottomImage" src="~/images/modeling1.png" stretch="aspectFit" />
-            <label class ="bottomLabel" textAlignment="center" text="btn3"/>
-        </StackLayout>
-    </FlexboxLayout>
-</DockLayout>
-  
-</Page>
- -->
 <Page  xmlns:mdt="@nativescript-community/ui-material-bottom-navigation" actionBarHidden="true" navigatingTo="navigatingTo">
 
     <mdt:BottomNavigation id="bottom" selectedIndex="0" selectedIndexChanged="checkChanged">
         <mdt:TabStrip class="bottom-nav" >
-            <mdt:TabStripItem id="0" class="tabstripitem-active" >
+            <mdt:TabStripItem  class="tabstripitem-active" >
                 <Label text="btn1"></Label>
-                <Image src="~/images/creativity1.png"></Image>
+                <Image nodeRole="image" id="image_0" src="~/images/creativity2.png" ></Image>
             </mdt:TabStripItem>
-            <mdt:TabStripItem id="1" class="tabstripitem-active" >
+            <mdt:TabStripItem class="tabstripitem-active" >
                 <Label text="btn2"></Label>
-                <Image src="~/images/tablet1.png" ></Image>
+                <Image nodeRole="image" id="image_1" src="~/images/tablet1.png" ></Image>
             </mdt:TabStripItem>
-            <mdt:TabStripItem  id="2" class="tabstripitem-active" >
+            <mdt:TabStripItem   class="tabstripitem-active" >
                 <Label text="btn3"></Label>
-                <Image  src="~/images/modeling1.png"></Image>
+                <Image nodeRole="image" id="image_2" src="~/images/modeling1.png"></Image>
             </mdt:TabStripItem>
         </mdt:TabStrip>
 
@@ -52,7 +25,7 @@
         </mdt:TabContentItem>
         <mdt:TabContentItem backgroundColor="red">
            <StackLayout  class="p-20" verticalAlignment="bottom"  >
-                <AbsoluteLayout id="addElements"  width="220" height="230">
+                <AbsoluteLayout id="addElements"  width="230" height="240" marginBottom="50" >
                 </AbsoluteLayout>
                 <Button text="FETCHDATA" tap="MakeHttp" class="-primary"/>
                 <Button text="CREATE VIEWS" tap="addViews" class="-primary"/>

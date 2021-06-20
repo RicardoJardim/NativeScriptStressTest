@@ -16,8 +16,7 @@ import {
 	File,
 } from "@nativescript/core";
 import * as geolocation from "@nativescript/geolocation";
-import * as enums from "@nativescript/core/core-types";
-enums.CoreTypes.Accuracy.high;
+import { CoreTypes } from "@nativescript/core";
 import * as imagepicker from "@nativescript/imagepicker";
 import * as Calendar from "nativescript-calendar";
 import * as camera from "@nativescript/camera";
@@ -26,19 +25,19 @@ var Contacts = require("nativescript-contacts-lite");
 const documents: Folder = <Folder>knownFolders.documents();
 const folder: Folder = <Folder>documents.getFolder("");
 
+const images = [
+	["~/images/creativity1.png", "~/images/creativity2.png"],
+	["~/images/tablet1.png", "~/images/tablet2.png"],
+	["~/images/modeling1.png", "~/images/modeling2.png"],
+];
+
 var page;
+var botNavIndex = 0;
 // Event handler for Page 'navigatingTo' event attached in main-page.xml
 export function navigatingTo(args: EventData) {
 	page = <Page>args.object;
 	var context = new MainPageModel();
 	page.bindingContext = context;
-	/* 	view.className = "active";
-	 */
-	/* context.buttons = [
-		page.getViewById("0"),
-		page.getViewById("1"),
-		page.getViewById("2"),
-	]; */
 }
 
 export function addViews(args: EventData) {
@@ -48,8 +47,8 @@ export function addViews(args: EventData) {
 	for (let index = 1; index <= 1000; index++) {
 		let btn = new AbsoluteLayout();
 		btn.backgroundColor = "white";
-		btn.width = 220;
-		btn.height = 230;
+		btn.width = 230;
+		btn.height = 240;
 		elm.addChild(btn);
 	}
 	console.log(new Date());
@@ -61,9 +60,11 @@ export function addButtons(args: EventData) {
 	console.log(new Date());
 	for (let index = 1; index <= 1000; index++) {
 		let btn = new Button();
-		btn.text = "My New Label";
+		btn.text = "click me";
 		btn.backgroundColor = "yellow";
 		btn.width = 230;
+		btn.top = 1;
+		btn.left = 1;
 		btn.height = 240;
 		elm.addChild(btn);
 	}
@@ -142,7 +143,7 @@ export function openCamera(): void {
 export function gps(args: EventData): void {
 	geolocation
 		.getCurrentLocation({
-			desiredAccuracy: enums.CoreTypes.Accuracy.any,
+			desiredAccuracy: CoreTypes.Accuracy.any,
 			maximumAge: 5000,
 			timeout: 20000,
 		})
@@ -190,9 +191,16 @@ export function getContacts(): void {
 	);
 }
 
-export function checkChanged(args: EventData) {
-	/* alert(args);
-	console.log(args); */
+export function checkChanged(args) {
+	const index = args.object.selectedIndex;
+	setUpImage(botNavIndex, 0);
+	setUpImage(index, 1);
+	botNavIndex = index;
+}
+
+function setUpImage(index, which) {
+	let elm = page.getViewById(`image_${index}`);
+	elm.src = images[index][which];
 }
 
 function writeFile(where: string, data: string): void {
