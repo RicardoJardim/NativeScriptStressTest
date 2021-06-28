@@ -75,7 +75,7 @@ export function MakeHttp() {
 	console.log(new Date());
 
 	Http.request({
-		url: "https://random-data-api.com/api/users/random_user?size=100",
+		url: "http://192.168.1.112:3000/users?size=100",
 		method: "GET",
 	}).then(
 		(response: HttpResponse) => {
@@ -88,7 +88,7 @@ export function MakeHttp() {
 		}
 	);
 	Http.request({
-		url: "https://random-data-api.com/api/bank/random_bank?size=100",
+		url: "http://192.168.1.112:3000/banks?size=100",
 		method: "GET",
 	}).then(
 		(response: HttpResponse) => {
