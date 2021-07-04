@@ -44,7 +44,7 @@ export function addViews(args: EventData) {
 	let elm = page.getViewById("addElements");
 
 	console.log(new Date());
-	for (let index = 1; index <= 1000; index++) {
+	for (let index = 1; index <= 500; index++) {
 		let btn = new AbsoluteLayout();
 		btn.backgroundColor = "white";
 		btn.width = 230;
@@ -58,7 +58,7 @@ export function addButtons(args: EventData) {
 	let elm = page.getViewById("addElements");
 
 	console.log(new Date());
-	for (let index = 1; index <= 1000; index++) {
+	for (let index = 1; index <= 500; index++) {
 		let btn = new Button();
 		btn.text = "click me";
 		btn.backgroundColor = "yellow";

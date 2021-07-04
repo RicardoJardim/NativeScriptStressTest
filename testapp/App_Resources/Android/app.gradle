@@ -17,4 +17,8 @@ android {
   aaptOptions {
     additionalParameters "--no-version-vectors"
   }
+  lintOptions {
+      disable 'InvalidPackage'
+      abortOnError false 
+  }
 }
